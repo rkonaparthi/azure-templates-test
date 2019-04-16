@@ -1,0 +1,84 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "networkInterfaceName": {
+            "value": "virtualmachinetest117"
+        },
+        "networkSecurityGroupName": {
+            "value": "VirtualMachineTest1-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                },
+                {
+                    "name": "HTTP",
+                    "properties": {
+                        "priority": 320,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "80"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "SubnetTest1"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/84a5b29f-c5ce-47a4-9af8-b839bfccbd5a/resourceGroups/ResourceGroupTest1/providers/Microsoft.Network/virtualNetworks/VirtualNetworkTest1"
+        },
+        "publicIpAddressName": {
+            "value": "VirtualMachineTest1-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "VirtualMachineTest1"
+        },
+        "virtualMachineRG": {
+            "value": "ResourceGroupTest1"
+        },
+        "osDiskType": {
+            "value": "Standard_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1ls"
+        },
+        "adminUsername": {
+            "value": "rkonapa"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "storage0account0test1"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/84a5b29f-c5ce-47a4-9af8-b839bfccbd5a/resourceGroups/ResourceGroupTest1/providers/Microsoft.Storage/storageAccounts/storage0account0test1"
+        }
+    }
+}
